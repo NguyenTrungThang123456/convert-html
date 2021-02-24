@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
 import "./App.css";
 import "antd/dist/antd.css";
 import {
@@ -10,14 +11,13 @@ import {
   TwitterOutlined,
   UpOutlined,
 } from "@ant-design/icons";
-import { BackTop, Button, Carousel, Col, Input, Layout, Menu, Row } from "antd";
+import { BackTop, Carousel, Col, Input, Layout, Menu, Row } from "antd";
 import WeDo from "./components/WeDo";
-import { Employee, Theme, WhatWeDo } from "./types";
+import { Employee, WhatWeDo } from "./types";
 import Employees from "./components/Employee";
 import Themes from "./components/Themes";
 const { SubMenu } = Menu;
-
-function App() {
+function App(props: any) {
   const wedos: WhatWeDo[] = [
     {
       image: "/images/whatwedo-img-1.png",
@@ -101,50 +101,15 @@ function App() {
     },
   ];
 
-  const themes: Theme[] = [
-    {
-      image: "/images/themes-image-1.png",
-      title: "Evolution Medical Page",
-      description:
-        "Need a website for a clinic? Choose this beautiful template with a high level of functionality.",
-      link: "VIEW MEDICAL PAGE",
-    },
-    {
-      image: "/images/themes-image-2.png",
-      title: "Evolution Web Design Page",
-      description:
-        "Promote your web design studio with this extremely wonderful and fast website template.",
-      link: "VIEW WEB DESIGN PAGE",
-    },
-    {
-      image: "/images/themes-image-3.png",
-      title: "Evolution Car Repair Page",
-      description:
-        "Create website for your service station fast with a home page you can customize with no coding.",
-      link: "VIEW CAR REPAIR PAGE",
-    },
-    {
-      image: "/images/themes-image-4.png",
-      title: "Evolution Real Estate Page",
-      description:
-        "Take advantage of a pre-built home page with design and save time on launching your website.",
-      link: "VIEW REAL ESTATE PAGE",
-    },
-    {
-      image: "/images/themes-image-5.png",
-      title: "Evolution Hotel Page",
-      description:
-        "Build a responsive website for your guesthouse with a well-designed extra home page.",
-      link: "VIEW HOTEL PAGE",
-    },
-    {
-      image: "/images/themes-image-6.png",
-      title: "Evolution Law Page",
-      description:
-        "Use this professionally-designed home page to make a law website much faster.",
-      link: "VIEW LAW PAGE",
-    },
-  ];
+  // const themes: Theme[] = [];
+  const { fetching, themes, fetchTheme, error } = props;
+  useEffect(() => {
+    fetchTheme();
+  }, []);
+
+  useEffect(() => {
+    console.log(themes);
+  });
 
   return (
     <Layout>
@@ -350,7 +315,8 @@ function App() {
             <p>Check out our responsive themes based on Evolution</p>
           </div>
           <Row className="themes-section-content" gutter={[16, 24]}>
-            <Themes themes={themes} />
+            {fetching ? <h1>Loading....</h1> : <Themes themes={themes} />}
+            {error && <h1>Error Fetch Themes</h1>}
           </Row>
         </div>
       </Row>
@@ -489,5 +455,17 @@ function App() {
     </Layout>
   );
 }
+const mapStateToProps = (state: any) => {
+  return {
+    fetching: state.fetching,
+    themes: state.themes,
+    error: state.error,
+  };
+};
 
-export default App;
+const mapDispatchToProps = (dispatch: any) => {
+  return {
+    fetchTheme: () => dispatch({ type: "THEME_LIST_REQUEST" }),
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(App);
