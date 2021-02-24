@@ -1,13 +1,394 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #434f53;
+  background-color: #fff;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.container {
+  max-width: 1200px;
+  width: 1200px;
+  /* margin-left: auto; */
+  padding: 0;
+}
+li {
+  color: #ffffff !important;
+}
+
+.text {
+  color: #ffffff;
+}
+
+.btn {
+  padding: 16px 52px;
+  font-family: "Hind", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #ffffff;
+  background-color: #aa71d0;
+  border-radius: 2px;
+  border: 2px solid #aa71d0;
+  transition: 0.5s;
+  text-transform: uppercase;
+}
+.social-links {
+  display: flex;
+  justify-content: center;
+}
+.social-links span {
+  font-size: 20px;
+  padding: 15px;
+}
+.btn:hover {
+  background-color: #ffffff;
+  color: #aa71d0;
+}
+.bran {
+  margin-left: 10px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.header-section {
+  height: 100vh;
+  justify-content: center;
+  background-color: blueviolet;
+  background-image: url("https://template59995.motopreview.com/mt-demo/59900/59995/mt-content/uploads/2016/10/mt-0617-home-bg-1.jpg");
+  background-position: initial;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding-top: 20px;
+  color: #ffffff !important;
+}
+
+.header-logo {
+  display: flex !important;
+  padding: 0;
+}
+.ant-menu {
+  background: border-box !important;
+}
+.hero {
+  line-height: 0.9;
+  padding-top: 120px;
+}
+.hero > h1 {
+  font-size: 53px;
+}
+.hero > h1 {
+  font-size: 53px;
+}
+.hero .text {
+  font-family: "Playfair Display", serif;
+}
+
+.hero li {
+  list-style: none;
+}
+
+/* hero-section */
+
+.hero-section {
+  justify-content: center;
+  padding: 60px 35px;
+  background-color: #ffffff;
+}
+
+.hero-section h1 {
+  margin-right: "75px";
+}
+
+.hero-section h1:last-child {
+  font-family: "Hind", sans-serif;
+}
+.hero-section h3 {
+  color: #8b8b8b;
+  padding-bottom: 40px;
+}
+
+/* whatwedo-section */
+.whatwedo-section {
+  background-color: #f3f5f6;
+  justify-content: center;
+  padding: 100px 30px;
+}
+
+.whatwedo-section-header {
+  text-align: center;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+
+.whatwedo-section-header h1 {
+  font-size: 35px;
+}
+
+.whatwedo-section-content .ant-col-8 {
+  justify-content: center;
+  text-align: center;
+  padding: 10px 20px;
+}
+.whatwedo-section-content .ant-col-8 img {
+  margin: 20px 0;
+}
+.whatwedo-section-content .ant-col-8 h1 {
+  font-size: 30px;
+}
+
+.whatwedo-section-content .ant-col-8 h4 {
+  color: #8b8b8b;
+}
+
+/* callback-section */
+.callback-section {
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 100px 280px;
+}
+
+.callback-section-content {
+  text-align: center;
+}
+
+.callback-section-content h1 {
+  letter-spacing: initial;
+  font-size: 55px;
+  line-height: 1.5;
+  padding-bottom: 30px;
+}
+
+/* slogan-section */
+.slogan-section {
+  justify-content: center;
+  height: 60vh;
+  background-color: #434f53;
+  background-image: url("https://template59995.motopreview.com/mt-demo/59900/59995/mt-content/uploads/2016/10/mt-0617-home-bg-3.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 70px 0;
+}
+.slogan-section div {
+  height: 100%;
+  text-align: center;
+  /* padding: 0 30px; */
+}
+.slogan-section h3 {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.slogan-section h4 {
+  color: #8b8b8b;
+  font-size: 16px;
+}
+
+/* employee-section */
+.employee-section {
+  justify-content: center;
+  padding: 100px 0;
+  background-color: #ffffff;
+}
+
+.employee-section-header {
+  text-align: center;
+}
+.employee-section-header h1 {
+  font-family: "Playfair Display", serif;
+  color: #2a2a2a;
+  font-size: 42px;
+  line-height: 1.2;
+  letter-spacing: 0px;
+}
+.employee-section-header p {
+  font-size: 16px;
+  color: #8b8b8b;
+}
+.employee-section-content {
+  margin-top: 30px;
+}
+.employee-section-content .ant-col {
+  text-align: center;
+}
+.employee-section-content h1 {
+  margin-top: 30px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Playfair Display", serif;
+  color: #2a2a2a;
+  font-size: 26px;
+  line-height: 1.2;
+  letter-spacing: 0px;
+}
+.employee-section-content p,
+.employee-section-content h3 {
+  color: #8b8b8b;
+}
+
+/* themes-section */
+.themes-section {
+  min-height: 80vh;
+  justify-content: center;
+  background-color: #434f53;
+  background-image: url("https://template59995.motopreview.com/mt-demo/59900/59995/mt-content/uploads/2016/10/mt-0617-home-bg-4.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  padding: 100px 0;
+}
+.themes-section-header {
+  text-align: center;
+}
+
+.themes-section-header h1 {
+  color: #ffffff;
+  font-size: 42px;
+}
+
+.themes-section-header p {
+  font-size: 18px;
+}
+
+.themes-section-content {
+  text-align: center;
+}
+.themes-section-content .ant-col {
+  padding: 20px 0;
+}
+.themes-section-content h1 {
+  color: #ffffff;
+  font-size: 26px;
+  line-height: 1.5;
+  padding-top: 40px;
+}
+
+.themes-section-content p {
+  font-size: 16px;
+  padding-bottom: 30px;
+}
+
+/* partners-section */
+.partners-section {
+  justify-content: center;
+  padding: 100px 0;
+}
+
+/* contact-section */
+.contact-section {
+  justify-content: center;
+  background-color: #434f53;
+  background-image: url("https://template59995.motopreview.com/mt-demo/59900/59995/mt-content/uploads/2016/10/mt-0617-home-bg-5.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  padding: 100px 0;
+}
+
+.contact-section-header {
+  text-align: center;
+}
+
+.contact-section-header h1 {
+  color: #ffffff;
+  font-size: 42px;
+}
+
+.contact-section-header p {
+  font-size: 16px;
+}
+.form {
+  width: 45vw;
+}
+.contact-section-content {
+  background-color: #29253b;
+  padding: 100px 50px;
+  text-align: center;
+}
+
+.contact-section-content .input-control {
+  height: 80px;
+}
+
+.input-control input {
+  width: 400px;
+  border: none;
+  background: border-box;
+  outline: none;
+  color: #ffffff;
+  border-bottom: 1px solid black;
+}
+
+.footer-section-header {
+  background-color: #272532;
+  justify-content: center;
+  padding: 100px 0;
+}
+.footer-section-header h1,
+.footer-section-header h2 {
+  color: #ffffff;
+}
+.footer-section-header ul {
+  list-style-type: none;
+}
+.footer-section-header ul li {
+  height: 30px;
+  font-size: 16px;
+}
+.footer-section-header ul li:hover {
+  color: #aa71d0;
+}
+.footer-section-header .ant-menu-vertical {
+  border: none;
+}
+.footer-section-header .ant-col:first-child,
+.footer-section-header .ant-col:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* .footer-section-header .ant-col:last-child {
+  
+} */
+.footer-section-header .ant-col:first-child h4 {
+  color: #635f76 !important;
+}
+
+.footer-section-footer {
+  padding-top: 10px;
+  justify-content: center;
+  background-color: #201a1a;
+}
+
+.footer-section-footer p {
+  color: #8b8b8b;
+  padding-right: 30px;
+}
+.footer-section-footer li {
+  list-style: none;
+}
+
+.back-top {
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  border-radius: 4px;
+  background-color: #1088e9;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
 }
