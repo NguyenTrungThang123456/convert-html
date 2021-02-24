@@ -11,9 +11,141 @@ import {
   UpOutlined,
 } from "@ant-design/icons";
 import { BackTop, Button, Carousel, Col, Input, Layout, Menu, Row } from "antd";
+import WeDo from "./components/WeDo";
+import { Employee, Theme, WhatWeDo } from "./types";
+import Employees from "./components/Employee";
+import Themes from "./components/Themes";
 const { SubMenu } = Menu;
 
 function App() {
+  const wedos: WhatWeDo[] = [
+    {
+      image: "/images/whatwedo-img-1.png",
+      title: "Responsive Design",
+      description:
+        "This theme is 100% mobile-friendly. Your website will look great on all popular mobile devices like smartphones and tablets.",
+    },
+    {
+      image: "/images/whatwedo-img-2.png",
+      title: "Drag & Drop Editor",
+      description:
+        "Creating a website for your own business with MotoCMS is easy as pie due to simple  drag-and-drop functionality.",
+    },
+    {
+      image: "/images/whatwedo-img-3.png",
+      title: "Preset Builder",
+      description:
+        "Transform appearance of contact forms, buttons and other widgets for your website.",
+    },
+    {
+      image: "/images/whatwedo-img-4.png",
+      title: "Fascinating Widgets",
+      description:
+        "Use a wide range of widgets for your  website customization.",
+    },
+    {
+      image: "/images/whatwedo-img-5.png",
+      title: "Parallax & Animation",
+      description:
+        "Make your website more attractive for users. Add parallax and animation effects.",
+    },
+    {
+      image: "/images/whatwedo-img-6.png",
+      title: "Google Fonts",
+      description:
+        "Use a large collection of beautiful text fonts designed by Google.",
+    },
+    {
+      image: "/images/whatwedo-img-7.png",
+      title: "SEO-friendly",
+      description:
+        "Optimize your website URLs, write unique keywords, add 301 redirects, enable website indexation and more.",
+    },
+    {
+      image: "/images/whatwedo-img-8.png",
+      title: "Blog Functionality",
+      description:
+        "Start a career of a professional blogger with a fully-featured blog. Write, update, delete articles and customize your blog design right in the admin panel.",
+    },
+    {
+      image: "/images/whatwedo-img-9.png",
+      title: "White Label",
+      description: "Retail MotoCMS products and promote your brand.",
+    },
+  ];
+
+  const employees: Employee[] = [
+    {
+      image: "/images/home-team-img-1.jpg",
+      name: "Mary Jones",
+      jopPosition: "Senior Developer",
+      description:
+        "Mary is one of the leading developers in the MotoCMS team. She implements her amazing ideas that help improve our products.",
+      socialLinks: ["ad", "ad", "ad"],
+    },
+    {
+      image: "/images/home-team-img-2.jpg",
+      name: "Richard White",
+      jopPosition: "Designer",
+      description:
+        "Richard has made dozens of MotoCMS templates for our vast collection of websites. He is a talented person.",
+      socialLinks: ["ad", "ad", "ad"],
+    },
+    {
+      image: "/images/home-team-img-3.jpg",
+      name: "Melissa Spector",
+      jopPosition: "Pre-Sale Manager",
+      description:
+        'Melissa loves working with MotoCMS customers. Her motto is: "Each customer is important."',
+      socialLinks: ["ad", "ad", "ad"],
+    },
+  ];
+
+  const themes: Theme[] = [
+    {
+      image: "/images/themes-image-1.png",
+      title: "Evolution Medical Page",
+      description:
+        "Need a website for a clinic? Choose this beautiful template with a high level of functionality.",
+      link: "VIEW MEDICAL PAGE",
+    },
+    {
+      image: "/images/themes-image-2.png",
+      title: "Evolution Web Design Page",
+      description:
+        "Promote your web design studio with this extremely wonderful and fast website template.",
+      link: "VIEW WEB DESIGN PAGE",
+    },
+    {
+      image: "/images/themes-image-3.png",
+      title: "Evolution Car Repair Page",
+      description:
+        "Create website for your service station fast with a home page you can customize with no coding.",
+      link: "VIEW CAR REPAIR PAGE",
+    },
+    {
+      image: "/images/themes-image-4.png",
+      title: "Evolution Real Estate Page",
+      description:
+        "Take advantage of a pre-built home page with design and save time on launching your website.",
+      link: "VIEW REAL ESTATE PAGE",
+    },
+    {
+      image: "/images/themes-image-5.png",
+      title: "Evolution Hotel Page",
+      description:
+        "Build a responsive website for your guesthouse with a well-designed extra home page.",
+      link: "VIEW HOTEL PAGE",
+    },
+    {
+      image: "/images/themes-image-6.png",
+      title: "Evolution Law Page",
+      description:
+        "Use this professionally-designed home page to make a law website much faster.",
+      link: "VIEW LAW PAGE",
+    },
+  ];
+
   return (
     <Layout>
       <Row className="header-section">
@@ -132,75 +264,7 @@ function App() {
           </Row>
 
           <Row className="whatwedo-section-content">
-            <Col span="8">
-              <img src="/images/whatwedo-img-1.png" alt="" />
-              <h1>Responsive Design</h1>
-              <h4>
-                This theme is 100% mobile-friendly. Your website will look great
-                on all popular mobile devices like smartphones and tablets.
-              </h4>
-            </Col>
-            <Col span="8">
-              <img src="/images/whatwedo-img-2.png" alt="" />
-              <h1>Drag & Drop Editor</h1>
-              <h4>
-                Creating a website for your own business with MotoCMS is easy as
-                pie due to simple drag-and-drop functionality.
-              </h4>
-            </Col>
-            <Col span="8">
-              <img src="/images/whatwedo-img-3.png" alt="" />
-              <h1>Preset Builder</h1>
-              <h4>
-                Transform appearance of contact forms, buttons and other widgets
-                for your website.
-              </h4>
-            </Col>
-            <Col span="8">
-              <img src="/images/whatwedo-img-4.png" alt="" />
-              <h1>Fascinating Widgets</h1>
-              <h4>
-                Use a wide range of widgets for your website customization.
-              </h4>
-            </Col>
-            <Col span="8">
-              <img src="/images/whatwedo-img-5.png" alt="" />
-              <h1>Parallax & Animation</h1>
-              <h4>
-                Make your website more attractive for users. Add parallax and
-                animation effects.
-              </h4>
-            </Col>
-            <Col span="8">
-              <img src="/images/whatwedo-img-6.png" alt="" />
-              <h1>Google Fonts</h1>
-              <h4>
-                Use a large collection of beautiful text fonts designed by
-                Google.
-              </h4>
-            </Col>
-            <Col span="8">
-              <img src="/images/whatwedo-img-7.png" alt="" />
-              <h1>SEO-friendly</h1>
-              <h4>
-                Optimize your website URLs, write unique keywords, add 301
-                redirects, enable website indexation and more.
-              </h4>
-            </Col>
-            <Col span="8">
-              <img src="/images/whatwedo-img-8.png" alt="" />
-              <h1>Blog Functionality</h1>
-              <h4>
-                Start a career of a professional blogger with a fully-featured
-                blog. Write, update, delete articles and customize your blog
-                design right in the admin panel.
-              </h4>
-            </Col>
-            <Col span="8">
-              <img src="/images/whatwedo-img-9.png" alt="" />
-              <h1>White Label</h1>
-              <h4>Retail MotoCMS products and promote your brand.</h4>
-            </Col>
+            <WeDo wedos={wedos} />
           </Row>
         </div>
       </Row>
@@ -274,66 +338,7 @@ function App() {
             </p>
           </div>
           <Row className="employee-section-content" gutter={16}>
-            <Col span="8">
-              <img src="/images/home-team-img-1.jpg" alt="" />
-              <h1>Mary Jones</h1>
-              <p>Senior Developer</p>
-              <h3>
-                Mary is one of the leading developers in the MotoCMS team. She
-                implements her amazing ideas that help improve our products.
-              </h3>
-              <div className="social-links">
-                <a href="a">
-                  <FacebookOutlined />
-                </a>
-                <a href="a">
-                  <TwitterOutlined />
-                </a>
-                <a href="a">
-                  <LinkedinOutlined />
-                </a>
-              </div>
-            </Col>
-            <Col span="8">
-              <img src="/images/home-team-img-2.jpg" alt="" />
-              <h1>Richard White</h1>
-              <p>Designer</p>
-              <h3>
-                Richard has made dozens of MotoCMS templates for our vast
-                collection of websites. He is a talented person.
-              </h3>
-              <div className="social-links">
-                <a href="a">
-                  <FacebookOutlined />
-                </a>
-                <a href="a">
-                  <TwitterOutlined />
-                </a>
-                <a href="a">
-                  <LinkedinOutlined />
-                </a>
-              </div>
-            </Col>
-            <Col span="8">
-              <img src="/images/home-team-img-3.jpg" alt="" />
-              <h1>Melissa Spector</h1>
-              <p>Pre-Sale Manager</p>
-              <h3>
-                Melissa loves working with MotoCMS customers. Her motto is:
-                "Each customer is important".
-              </h3>
-              <div className="social-links">
-                <a href="a">
-                  <FacebookOutlined />
-                </a>
-                <a href="a">
-                  <TwitterOutlined />
-                </a>
-                <a href="a">
-                  <LinkedinOutlined />
-                </a>
-              </div>
-            </Col>
+            <Employees employees={employees} />
           </Row>
         </div>
       </Row>
@@ -345,72 +350,7 @@ function App() {
             <p>Check out our responsive themes based on Evolution</p>
           </div>
           <Row className="themes-section-content" gutter={[16, 24]}>
-            <Col span="8">
-              <img src="/images/themes-image-1.png" alt="" />
-              <h1>Evolution Medical Page</h1>
-              <p>
-                Need a website for a clinic? Choose this beautiful template with
-                a high level of functionality.
-              </p>
-              <a href="aa" className="btn">
-                VIEW MEDICAL PAGE
-              </a>
-            </Col>
-            <Col span="8">
-              <img src="/images/themes-image-2.png" alt="" />
-              <h1>Evolution Web Design Page</h1>
-              <p>
-                Promote your web design studio with this extremely wonderful and
-                fast website template.
-              </p>
-              <a href="aa" className="btn">
-                VIEW WEB DESIGN PAGE
-              </a>
-            </Col>
-            <Col span="8">
-              <img src="/images/themes-image-3.png" alt="" />
-              <h1>Evolution Car Repair Page</h1>
-              <p>
-                Create website for your service station fast with a home page
-                you can customize with no coding.
-              </p>
-              <a href="aa" className="btn">
-                VIEW CAR REPAIR PAGE
-              </a>
-            </Col>
-            <Col span="8">
-              <img src="/images/themes-image-4.png" alt="" />
-              <h1>Evolution Real Estate Page</h1>
-              <p>
-                Take advantage of a pre-built home page with design and save
-                time on launching your website.
-              </p>
-              <a href="aa" className="btn">
-                VIEW REAL ESTATE PAGE
-              </a>
-            </Col>
-            <Col span="8">
-              <img src="/images/themes-image-5.png" alt="" />
-              <h1>Evolution Hotel Page</h1>
-              <p>
-                Build a responsive website for your guesthouse with a
-                well-designed extra home page.
-              </p>
-              <a href="aa" className="btn">
-                VIEW HOTEL PAGE
-              </a>
-            </Col>
-            <Col span="8">
-              <img src="/images/themes-image-6.png" alt="" />
-              <h1>Evolution Law Page</h1>
-              <p>
-                Use this professionally-designed home page to make a law website
-                much faster.
-              </p>
-              <a href="aa" className="btn">
-                VIEW LAW PAGE
-              </a>
-            </Col>
+            <Themes themes={themes} />
           </Row>
         </div>
       </Row>
