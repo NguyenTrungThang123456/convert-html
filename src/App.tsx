@@ -32,62 +32,6 @@ type AppProps = {
 };
 
 function App(props: AppProps) {
-  // const wedos: WhatWeDo[] = [
-  //   {
-  //     image: "/images/whatwedo-img-1.png",
-  //     title: "Responsive Design",
-  //     description:
-  //       "This theme is 100% mobile-friendly. Your website will look great on all popular mobile devices like smartphones and tablets.",
-  //   },
-  //   {
-  //     image: "/images/whatwedo-img-2.png",
-  //     title: "Drag & Drop Editor",
-  //     description:
-  //       "Creating a website for your own business with MotoCMS is easy as pie due to simple  drag-and-drop functionality.",
-  //   },
-  //   {
-  //     image: "/images/whatwedo-img-3.png",
-  //     title: "Preset Builder",
-  //     description:
-  //       "Transform appearance of contact forms, buttons and other widgets for your website.",
-  //   },
-  //   {
-  //     image: "/images/whatwedo-img-4.png",
-  //     title: "Fascinating Widgets",
-  //     description:
-  //       "Use a wide range of widgets for your  website customization.",
-  //   },
-  //   {
-  //     image: "/images/whatwedo-img-5.png",
-  //     title: "Parallax & Animation",
-  //     description:
-  //       "Make your website more attractive for users. Add parallax and animation effects.",
-  //   },
-  //   {
-  //     image: "/images/whatwedo-img-6.png",
-  //     title: "Google Fonts",
-  //     description:
-  //       "Use a large collection of beautiful text fonts designed by Google.",
-  //   },
-  //   {
-  //     image: "/images/whatwedo-img-7.png",
-  //     title: "SEO-friendly",
-  //     description:
-  //       "Optimize your website URLs, write unique keywords, add 301 redirects, enable website indexation and more.",
-  //   },
-  //   {
-  //     image: "/images/whatwedo-img-8.png",
-  //     title: "Blog Functionality",
-  //     description:
-  //       "Start a career of a professional blogger with a fully-featured blog. Write, update, delete articles and customize your blog design right in the admin panel.",
-  //   },
-  //   {
-  //     image: "/images/whatwedo-img-9.png",
-  //     title: "White Label",
-  //     description: "Retail MotoCMS products and promote your brand.",
-  //   },
-  // ];
-
   const employees: Employee[] = [
     {
       image: "/images/home-team-img-1.jpg",
@@ -115,51 +59,6 @@ function App(props: AppProps) {
     },
   ];
 
-  // const themes: Theme[] = [
-  //   {
-  //     image: "/images/themes-image-1.png",
-  //     title: "Evolution Medical Page",
-  //     description:
-  //       "Need a website for a clinic? Choose this beautiful template with a high level of functionality.",
-  //     link: "VIEW MEDICAL PAGE",
-  //   },
-  //   {
-  //     image: "/images/themes-image-2.png",
-  //     title: "Evolution Web Design Page",
-  //     description:
-  //       "Promote your web design studio with this extremely wonderful and fast website template.",
-  //     link: "VIEW WEB DESIGN PAGE",
-  //   },
-  //   {
-  //     image: "/images/themes-image-3.png",
-  //     title: "Evolution Car Repair Page",
-  //     description:
-  //       "Create website for your service station fast with a home page you can customize with no coding.",
-  //     link: "VIEW CAR REPAIR PAGE",
-  //   },
-  //   {
-  //     image: "/images/themes-image-4.png",
-  //     title: "Evolution Real Estate Page",
-  //     description:
-  //       "Take advantage of a pre-built home page with design and save time on launching your website.",
-  //     link: "VIEW REAL ESTATE PAGE",
-  //   },
-  //   {
-  //     image: "/images/themes-image-5.png",
-  //     title: "Evolution Hotel Page",
-  //     description:
-  //       "Build a responsive website for your guesthouse with a well-designed extra home page.",
-  //     link: "VIEW HOTEL PAGE",
-  //   },
-  //   {
-  //     image: "/images/themes-image-6.png",
-  //     title: "Evolution Law Page",
-  //     description:
-  //       "Use this professionally-designed home page to make a law website much faster.",
-  //     link: "VIEW LAW PAGE",
-  //   },
-  // ];
-
   const { error, fetching, themes } = props.theme;
   const { wedos } = props.wedo;
 
@@ -167,9 +66,7 @@ function App(props: AppProps) {
     props.themeAction.getThemes();
     props.wedoAction.getWedos();
   }, []);
-  useEffect(() => {
-    console.log(wedos);
-  });
+
   return (
     <Layout>
       <Row className="header-section">

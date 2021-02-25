@@ -1,17 +1,15 @@
 import { call, put, takeLatest } from "redux-saga/effects";
 import * as actionTypes from "../actionTypes/wedos";
 import * as actionCreators from "../actionCreators/wedos";
+import axios from "axios";
 
-const API_ENDPOINT_THEME = "http://localhost:5000/wedos";
+const API_ENDPOINT_WEDO = "http://localhost:5000/wedos";
 
 function* getWedos() {
   try {
-    let wedos = yield call(() =>
-      fetch(API_ENDPOINT_THEME).then((response) => response.json())
-    );
-    console.log(wedos);
+    let res = yield call(axios.get, `${API_ENDPOINT_WEDO}`);
 
-    yield put(actionCreators.getWedosSuccess(wedos));
+    yield put(actionCreators.getWedosSuccess(res.data));
   } catch (error) {
     yield put(actionCreators.getWedosError(error));
   }
