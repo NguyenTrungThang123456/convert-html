@@ -14,6 +14,32 @@ function* getThemes() {
   }
 }
 
+function* uploadFile(action: any) {
+  console.log(action.file);
+}
+
+function* createTheme(action: any) {
+  const newTheme = {
+    id: Math.floor(Math.random() * 100) + 1,
+    title: action.theme.title,
+    description: action.theme.description,
+    image: action.theme.image,
+    link: action.theme.link,
+  };
+
+  try {
+    console.log(newTheme);
+
+    yield put(actionCreators.uploadFiles(newTheme.image));
+    // yield call(axios.post, `${API_ENDPOINT_THEME}`, newTheme);
+    yield put(actionCreators.getThemes());
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export function* themeSaga() {
   yield takeLatest(actionTypes.GET_THEMES, getThemes);
+  yield takeLatest(actionTypes.CREATE_THEME, createTheme);
+  yield takeLatest(actionTypes.UPLOAD_FILE, uploadFile);
 }

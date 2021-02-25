@@ -11,3 +11,11 @@ export function getThemesSuccess(themes: any) {
 export function getThemesError(error: any) {
   return { type: actionTypes.GET_THEMES_FAILURE, error };
 }
+
+export function createTheme(theme: any) {
+  return { type: actionTypes.CREATE_THEME, theme };
+}
+
+export function uploadFiles(file: any) {
+  return { type: actionTypes.UPLOAD_FILE, file };
+}

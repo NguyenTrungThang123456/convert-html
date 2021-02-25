@@ -7,8 +7,6 @@ const initialState = {
 };
 
 const wedoReducer = (state = initialState, action: any) => {
-  console.log(action);
-
   switch (action.type) {
     case actionTypes.GET_WEDOS:
       return { ...state, fetching: true, error: null };

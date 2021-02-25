@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import "./App.css";
@@ -10,10 +10,23 @@ import {
   MailOutlined,
   PhoneOutlined,
   TwitterOutlined,
+  UploadOutlined,
   UpOutlined,
 } from "@ant-design/icons";
 
-import { BackTop, Carousel, Col, Input, Layout, Menu, Row } from "antd";
+import {
+  BackTop,
+  Button,
+  Carousel,
+  Col,
+  Form,
+  Input,
+  Layout,
+  Menu,
+  Modal,
+  Row,
+  Upload,
+} from "antd";
 
 import WeDo from "./components/WeDo";
 import * as themeActionCreator from "./actionCreators/themes";
@@ -22,6 +35,7 @@ import * as wedoActionCreator from "./actionCreators/wedos";
 import { Employee } from "./types";
 import Employees from "./components/Employee";
 import Themes from "./components/Themes";
+import { useFormik } from "formik";
 const { SubMenu } = Menu;
 
 type AppProps = {
@@ -32,6 +46,7 @@ type AppProps = {
 };
 
 function App(props: AppProps) {
+  const [modalVisible, setModalVisible] = useState(false);
   const employees: Employee[] = [
     {
       image: "/images/home-team-img-1.jpg",
@@ -67,6 +82,22 @@ function App(props: AppProps) {
     props.wedoAction.getWedos();
   }, []);
 
+  const formik = useFormik({
+    enableReinitialize: true,
+    initialValues: {
+      title: "",
+      description: "",
+      image: "",
+      link: "",
+    },
+    onSubmit: (values) => {
+      props.themeAction.createTheme(values);
+    },
+  });
+
+  useEffect(() => {
+    console.log(formik.values);
+  });
   return (
     <Layout>
       <Row className="header-section">
@@ -270,7 +301,50 @@ function App(props: AppProps) {
             <h1>Child pages</h1>
             <p>Check out our responsive themes based on Evolution</p>
           </div>
+          <Button type="primary" onClick={() => setModalVisible(true)}>
+            Add Theme{" "}
+          </Button>
+
           <Row className="themes-section-content" gutter={[16, 24]}>
+            <Modal
+              title="Add Theme"
+              centered
+              visible={modalVisible}
+              onOk={() => {
+                setModalVisible(false);
+                formik.handleSubmit();
+              }}
+              onCancel={() => setModalVisible(false)}
+            >
+              <Form>
+                <Form.Item label="Title" name="title">
+                  <Input
+                    value={formik.values.title}
+                    onChange={formik.handleChange}
+                  />
+                </Form.Item>
+                <Form.Item label="Description" name="description">
+                  <Input
+                    value={formik.values.description}
+                    onChange={formik.handleChange}
+                  />
+                </Form.Item>
+                <Form.Item label="Link" name="link">
+                  <Input
+                    value={formik.values.link}
+                    onChange={formik.handleChange}
+                  />
+                </Form.Item>
+                <Form.Item label="Image" name="image">
+                  <Input
+                    type="file"
+                    onChange={(e) => {
+                      formik.setFieldValue("image", e.target.files);
+                    }}
+                  />
+                </Form.Item>
+              </Form>
+            </Modal>
             {fetching ? <h1>Loading....</h1> : <Themes themes={themes} />}
             {error && <h1>{error}</h1>}
           </Row>

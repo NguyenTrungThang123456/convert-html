@@ -1,40 +1,52 @@
 {
   "themes": [
     {
+      "id": 1,
       "image": "/images/themes-image-1.png",
       "title": "Evolution Medical Page",
       "description": "Need a website for a clinic? Choose this beautiful template with a high level of functionality.",
       "link": "VIEW MEDICAL PAGE"
     },
     {
+      "id": 2,
       "image": "/images/themes-image-2.png",
       "title": "Evolution Web Design Page",
       "description": "Promote your web design studio with this extremely wonderful and fast website template.",
       "link": "VIEW WEB DESIGN PAGE"
     },
     {
+      "id": 3,
       "image": "/images/themes-image-3.png",
       "title": "Evolution Car Repair Page",
       "description": "Create website for your service station fast with a home page you can customize with no coding.",
       "link": "VIEW CAR REPAIR PAGE"
     },
     {
+      "id": 4,
       "image": "/images/themes-image-4.png",
       "title": "Evolution Real Estate Page",
       "description": "Take advantage of a pre-built home page with design and save time on launching your website.",
       "link": "VIEW REAL ESTATE PAGE"
     },
     {
+      "id": 5,
       "image": "/images/themes-image-5.png",
       "title": "Evolution Hotel Page",
       "description": "Build a responsive website for your guesthouse with a well-designed extra home page.",
       "link": "VIEW HOTEL PAGE"
     },
     {
+      "id": 6,
       "image": "/images/themes-image-6.png",
       "title": "Evolution Law Page",
       "description": "Use this professionally-designed home page to make a law website much faster.",
       "link": "VIEW LAW PAGE"
+    },
+    {
+      "id": 20,
+      "title": "a",
+      "description": "a",
+      "link": "a"
     }
   ],
   "employees": [
@@ -105,6 +117,13 @@
       "image": "/images/whatwedo-img-9.png",
       "title": "White Label",
       "description": "Retail MotoCMS products and promote your brand."
+    }
+  ],
+  "uploads": [
+    {
+      "url": "",
+      "fileSize": "",
+      "fileType": ""
     }
   ]
 }
