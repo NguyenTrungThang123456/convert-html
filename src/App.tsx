@@ -10,7 +10,6 @@ import {
   MailOutlined,
   PhoneOutlined,
   TwitterOutlined,
-  UploadOutlined,
   UpOutlined,
 } from "@ant-design/icons";
 
@@ -25,7 +24,6 @@ import {
   Menu,
   Modal,
   Row,
-  Upload,
 } from "antd";
 
 import WeDo from "./components/WeDo";
@@ -81,6 +79,7 @@ function App(props: AppProps) {
     props.themeAction.getThemes();
     props.wedoAction.getWedos();
   }, []);
+  const [form] = Form.useForm();
 
   const formik = useFormik({
     enableReinitialize: true,
@@ -90,14 +89,19 @@ function App(props: AppProps) {
       image: "",
       link: "",
     },
-    onSubmit: (values) => {
+    onReset: () => {
+      form.resetFields();
+    },
+    onSubmit: (values, { resetForm }) => {
       props.themeAction.createTheme(values);
+      resetForm();
     },
   });
 
   useEffect(() => {
     console.log(formik.values);
-  });
+  }, [formik.values]);
+
   return (
     <Layout>
       <Row className="header-section">
@@ -302,7 +306,7 @@ function App(props: AppProps) {
             <p>Check out our responsive themes based on Evolution</p>
           </div>
           <Button type="primary" onClick={() => setModalVisible(true)}>
-            Add Theme{" "}
+            Add Theme
           </Button>
 
           <Row className="themes-section-content" gutter={[16, 24]}>
@@ -314,9 +318,12 @@ function App(props: AppProps) {
                 setModalVisible(false);
                 formik.handleSubmit();
               }}
-              onCancel={() => setModalVisible(false)}
+              onCancel={() => {
+                setModalVisible(false);
+                formik.resetForm();
+              }}
             >
-              <Form>
+              <Form form={form}>
                 <Form.Item label="Title" name="title">
                   <Input
                     value={formik.values.title}
@@ -339,7 +346,7 @@ function App(props: AppProps) {
                   <Input
                     type="file"
                     onChange={(e) => {
-                      formik.setFieldValue("image", e.target.files);
+                      formik.setFieldValue("image", e.target.files?.item(0));
                     }}
                   />
                 </Form.Item>

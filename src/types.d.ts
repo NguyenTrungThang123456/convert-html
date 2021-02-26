@@ -13,7 +13,8 @@ export interface Employee {
 }
 
 export interface Theme {
-  image?: string;
+  id?: number;
+  image?: any;
   title?: string;
   description?: string;
   link?: string;

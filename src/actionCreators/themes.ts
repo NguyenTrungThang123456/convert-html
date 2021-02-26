@@ -16,6 +16,6 @@ export function createTheme(theme: any) {
   return { type: actionTypes.CREATE_THEME, theme };
 }
 
-export function uploadFiles(file: any) {
-  return { type: actionTypes.UPLOAD_FILE, file };
+export function deleteTheme(id: any) {
+  return { type: actionTypes.DELETE_THEME, id };
 }

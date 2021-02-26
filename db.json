@@ -22,31 +22,11 @@
       "link": "VIEW CAR REPAIR PAGE"
     },
     {
-      "id": 4,
-      "image": "/images/themes-image-4.png",
-      "title": "Evolution Real Estate Page",
-      "description": "Take advantage of a pre-built home page with design and save time on launching your website.",
-      "link": "VIEW REAL ESTATE PAGE"
-    },
-    {
       "id": 5,
       "image": "/images/themes-image-5.png",
       "title": "Evolution Hotel Page",
       "description": "Build a responsive website for your guesthouse with a well-designed extra home page.",
       "link": "VIEW HOTEL PAGE"
-    },
-    {
-      "id": 6,
-      "image": "/images/themes-image-6.png",
-      "title": "Evolution Law Page",
-      "description": "Use this professionally-designed home page to make a law website much faster.",
-      "link": "VIEW LAW PAGE"
-    },
-    {
-      "id": 20,
-      "title": "a",
-      "description": "a",
-      "link": "a"
     }
   ],
   "employees": [
@@ -55,21 +35,33 @@
       "name": "Mary Jones",
       "jopPosition": "Senior Developer",
       "description": "Mary is one of the leading developers in the MotoCMS team. She implements her amazing ideas that help improve our products.",
-      "socialLinks": ["ad", "ad", "ad"]
+      "socialLinks": [
+        "ad",
+        "ad",
+        "ad"
+      ]
     },
     {
       "image": "/images/home-team-img-2.jpg",
       "name": "Richard White",
       "jopPosition": "Designer",
       "description": "Richard has made dozens of MotoCMS templates for our vast collection of websites. He is a talented person.",
-      "socialLinks": ["ad", "ad", "ad"]
+      "socialLinks": [
+        "ad",
+        "ad",
+        "ad"
+      ]
     },
     {
       "image": "/images/home-team-img-3.jpg",
       "name": "Melissa Spector",
       "jopPosition": "Pre-Sale Manager",
       "description": "Melissa loves working with MotoCMS customers. Her motto is: \"Each customer is important.\"",
-      "socialLinks": ["ad", "ad", "ad"]
+      "socialLinks": [
+        "ad",
+        "ad",
+        "ad"
+      ]
     }
   ],
   "wedos": [
@@ -117,13 +109,6 @@
       "image": "/images/whatwedo-img-9.png",
       "title": "White Label",
       "description": "Retail MotoCMS products and promote your brand."
-    }
-  ],
-  "uploads": [
-    {
-      "url": "",
-      "fileSize": "",
-      "fileType": ""
     }
   ]
 }
