@@ -2,7 +2,7 @@ import { call, put, takeLatest } from "redux-saga/effects";
 import * as actionTypes from "../actionTypes/themes";
 import * as actionCreators from "../actionCreators/themes";
 import axios from "axios";
-import { Theme } from "../types";
+import { ThemeModel } from "../types";
 
 const API_ENDPOINT_THEME = "http://localhost:5000/themes";
 
@@ -27,7 +27,7 @@ async function createTheme(action: any) {
     return res;
   });
 
-  const newTheme: Theme = {
+  const newTheme: ThemeModel = {
     id: Math.floor(Math.random() * 1000) + 1,
     title: action.theme.title,
     description: action.theme.description,

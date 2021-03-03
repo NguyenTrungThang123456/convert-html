@@ -5,13 +5,13 @@ import {
 } from "@ant-design/icons";
 import { Col } from "antd";
 import React from "react";
-import { Employee } from "../types";
+import { EmployeeModel } from "../types";
 
 type EmployeeProps = {
-  employees?: Employee[];
+  employees?: EmployeeModel[];
 };
 
-const Employees = (props: EmployeeProps) => {
+const Employee = (props: EmployeeProps) => {
   return (
     <>
       {props.employees?.map((employee) => {
@@ -39,4 +39,4 @@ const Employees = (props: EmployeeProps) => {
   );
 };
 
-export default Employees;
+export default Employee;

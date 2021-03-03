@@ -1,10 +1,10 @@
-export interface WhatWeDo {
+export interface WeDoModel {
   image?: string;
   title?: string;
   description?: string;
 }
 
-export interface Employee {
+export interface EmployeeModel {
   image?: string;
   name?: string;
   jopPosition?: string;
@@ -12,7 +12,7 @@ export interface Employee {
   socialLinks?: string[];
 }
 
-export interface Theme {
+export interface ThemeModel {
   id?: number;
   image?: any;
   title?: string;
